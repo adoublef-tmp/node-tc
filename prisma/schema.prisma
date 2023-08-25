@@ -1,0 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+// models for https://accounts.example.com
+
+model Account {
+    // id should be an Int, but we use String for the sake of simplicity
+    id       String @id @default(cuid())
+    email    String @unique
+    name     String
+    password String
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@map("accounts")
+}
+
+// TODO: model Profile { ... }
+
+// models for https://feed.example.com
+
+model Fact {
+    id     String @id @default(cuid())
+    info   String @db.Char(160)
+    source String
+
+    accountId String
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@map("facts")
+}

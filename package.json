@@ -1,0 +1,43 @@
+{
+    "name": "@hyphenode/facts-of-life",
+    "version": "1.0.0",
+    "description": "Facts of Life is a social application that allows users to share their life experiences and learn from others.",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "dev": "tsx index.ts --watch",
+        "format": "prettier --write .",
+        "prisma": "prisma generate",
+        "test": "vitest --run"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@paralleldrive/cuid2": "^2.2.0",
+        "@prisma/client": "^4.13.0",
+        "argon2": "^0.30.3",
+        "compression": "^1.7.4",
+        "cors": "^2.8.5",
+        "express": "^4.18.2",
+        "express-jwt": "^8.4.1",
+        "jsonwebtoken": "^9.0.0",
+        "nats": "^2.13.1",
+        "zod": "^3.21.4"
+    },
+    "devDependencies": {
+        "@types/compression": "^1.7.2",
+        "@types/cors": "^2.8.13",
+        "@types/express": "^4.17.17",
+        "@types/jsonwebtoken": "^9.0.2",
+        "@types/node": "^20.1.1",
+        "@types/supertest": "^2.0.12",
+        "prettier": "^2.8.8",
+        "prisma": "^4.13.0",
+        "supertest": "^6.3.3",
+        "testcontainers": "^9.6.0",
+        "tsx": "^3.12.7",
+        "typescript": "^5.0.4",
+        "vitest": "^0.31.0"
+    }
+}
